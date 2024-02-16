@@ -140,7 +140,7 @@ const data = [
       {
         intro: [
           "An escape room is a type of physical adventure game where players are imprisoned in a themed room and have a set amount of time to solve a series of puzzles and riddles in order to escape. The rooms are created so that you will be in the right environment to address the challenges presented.An escape room may have logic puzzles, hidden objects, ciphers, and physical challenges, among other types of puzzles. Players must utilize their talents of observation and deduction to find the clues because they are frequently concealed within the room. With teams of four individuals, escape rooms are typically played, and the activity is meant to promote communication and teamwork. The riddles require cooperation from the players.",
-          "Fees structure Rs. 30 (per person)",
+          "Fees structure Rs. 30 (per person) needs to be changed",
         ],
         rules: [
           "Participants must respect the property and facilities of the event venue and not cause any damage or disturbance.",
