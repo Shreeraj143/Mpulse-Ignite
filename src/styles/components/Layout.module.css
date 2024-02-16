@@ -1,0 +1,146 @@
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 80px;
+  transition: 0.5s all ease-in-out;
+  z-index: 8;
+}
+
+nav .close {
+  z-index: 2;
+  color: #fdfdfd;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  font-size: 35px;
+  background: #191424;
+  border-radius: 2px;
+  display: none;
+}
+
+.show {
+  left: 0;
+}
+
+nav img {
+  width: 130px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 0px 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fdfdfd;
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: 0.5s ease all;
+  text-transform: capitalize;
+}
+
+nav ul li a:hover {
+  color: #0cd1eb;
+}
+
+/* footer */
+footer {
+  background: #2b2141;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 30px 10px;
+}
+
+footer img {
+  width: 100px;
+}
+
+footer ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 10px;
+}
+
+footer ul li {
+  list-style: none;
+  margin: 0px 10px;
+}
+
+.socialIcon {
+  font-size: 25px;
+}
+
+footer ul li a {
+  color: #fdfdfd;
+  text-decoration: none;
+  transition: 0.5s all ease-in-out;
+}
+
+footer ul li a:hover {
+  color: #0cd1eb;
+}
+
+footer p {
+  color: #fdfdfd;
+  font-size: 1.1rem;
+  margin-top: 5px;
+}
+
+@media only screen and (max-width: 860px) {
+  nav {
+    flex-direction: column;
+    background: #2b2141;
+    justify-content: center;
+    top: 0;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    z-index: 1;
+    backdrop-filter: unset;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 15px 0px;
+  }
+
+  nav ul li a {
+    font-size: 1.4rem;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  nav .close {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  footer ul {
+    flex-direction: column;
+    margin-top: 0;
+  }
+  footer ul li {
+    margin: 5px 10px;
+  }
+  footer img {
+    margin-bottom: 0;
+  }
+}

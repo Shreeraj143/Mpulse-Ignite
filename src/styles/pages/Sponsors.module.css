@@ -1,0 +1,23 @@
+.sponsors {
+  background: #2b2141;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 120px;
+  overflow-x: hidden;
+}
+
+.sponsors img {
+  width: 150px;
+  margin-top: 50px;
+}
+
+.sponsors h1 {
+  color: #fdfdfd;
+  font-size: 300%;
+  font-weight: 600;
+  margin: 20px 10px;
+  text-transform: uppercase;
+}

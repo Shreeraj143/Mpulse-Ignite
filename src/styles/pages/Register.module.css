@@ -1,0 +1,194 @@
+.register {
+  background: #2b2141;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 120px;
+  padding-bottom: 50px;
+}
+
+.register h1 {
+  color: #fdfdfd;
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin: 20px 10px;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.register form {
+  width: 500px;
+  margin-top: 20px;
+}
+
+.register form .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.register form .row,
+.register form .row1 {
+  margin-bottom: 20px;
+}
+
+.register form .row input,
+.register form .row select {
+  width: 242px;
+}
+
+.register button {
+  background: #0cd1eb;
+  border: 1px solid #0cd1eb;
+  color: #2b2141;
+  width: 100%;
+  margin-top: 15px;
+  padding: 12px 10px;
+  font-weight: 500;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  transition: 0.5s all ease-in-out;
+}
+
+.register button:hover {
+  background: transparent;
+  border-color: #fdfdfd;
+  color: #fdfdfd;
+}
+
+/*  */
+.floatinglabelgroup {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.floatinglabelgroup input,
+.floatinglabelgroup select {
+  border: none;
+  background: #3f315f;
+  border-radius: 5px;
+  outline: none;
+  padding: 15px 10px;
+  font-size: 16px;
+  color: #fdfdfd;
+}
+
+.floatinglabelgroup input::file-selector-button {
+  background: #2b2141;
+  border: none;
+  font-size: 12px;
+  color: #fdfdfd;
+  font-family: 'Montserrat', sans-serif;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.floatinglabel {
+  position: absolute;
+  pointer-events: none;
+  top: 14px;
+  left: 12px;
+  transition: all 0.1s ease;
+  font-size: 15px;
+  color: #fdfdfd;
+  height: 10px;
+}
+
+.floatinglabelselect {
+  position: absolute;
+  top: -9px;
+  left: 0px;
+  font-size: 14px;
+  opacity: 1;
+  color: #0cd1eb;
+  margin-left: 10px;
+}
+
+.floatinglabelgroup input:focus ~ .floatinglabel,
+.floatinglabelgroup input:not(:focus):valid ~ .floatinglabel {
+  top: -8px;
+  bottom: 0px;
+  font-size: 14px;
+  opacity: 1;
+  color: #0cd1eb;
+}
+
+.register p {
+  color: #0cd1eb;
+  text-align: center;
+  margin: 20px 0px 10px;
+  font-weight: 500;
+}
+
+.register .qr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register .qr img {
+  width: 200px;
+  margin: 10px 0px;
+}
+
+/*  */
+@media only screen and (max-width: 900px) {
+  .register {
+    padding-top: 50px;
+  }
+  .register h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .register form {
+    width: 100%;
+  }
+
+  .register {
+    padding: 50px 20px;
+  }
+
+  .register form .row {
+    display: block;
+  }
+
+  .register form .row,
+  .register form .row1 {
+    margin-bottom: 0px;
+  }
+
+  .register form .row input,
+  .register form .row select {
+    width: 100%;
+  }
+
+  .register form input,
+  .register form select {
+    margin-bottom: 15px;
+  }
+
+  .register button {
+    margin-top: 0px;
+  }
+
+  .register .qr img {
+    margin-bottom: 20px;
+  }
+}
+
+/* input background color autocomplete */
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
+input[data-autocompleted] {
+  background-color: transparent !important;
+}
