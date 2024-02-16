@@ -1,0 +1,1 @@
+// "build": "rm -rf dist/ && react-scripts build && ./deploy.bat",
