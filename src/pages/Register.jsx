@@ -20,11 +20,10 @@ const qrs = {
 const Register = () => {
   const years = ['1st', '2nd', '3rd', '4th'];
   const events = [
-    'Bug Bounty',
-    'Design-X',
     'Hackathon',
     'Mock Placement',
     'Escape Room',
+    'Algo Mania'
   ];
 
   const [data, setData] = useState({
@@ -35,7 +34,7 @@ const Register = () => {
     college_name: '',
     college_department: '',
     current_year: '1st',
-    event_name: 'Bug Bounty',
+    event_name: 'Hackathon',
     payment_id: '',
     team_members: [],
     teammember1: '',
@@ -51,7 +50,7 @@ const Register = () => {
 
   useEffect(() => {
     if (
-      data.event_name === 'Bug Bounty' ||
+      data.event_name === 'Algo Mania' ||
       data.event_name === 'Mock Placement'
     ) {
       setFees(30);
@@ -68,7 +67,7 @@ const Register = () => {
       }
       setFees(fee);
     } else if (
-      data.event_name === 'Design-X' ||
+      data.event_name === 'Algo Mania' ||
       data.event_name === 'Escape Room'
     ) {
       let fee = 30;
@@ -277,7 +276,7 @@ const Register = () => {
   return (
     <div className={styles.register}>
       <Helmet>
-        <title>Mpulse Ignite 2023 | Register</title>
+        <title>Mpulse Ignite 2024 | Register</title>
       </Helmet>
 
       {/* <img src="/ignite-logo.png" alt="ignite-logo" /> */}
