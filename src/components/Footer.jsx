@@ -49,7 +49,7 @@ const Footer = () => {
           </li>
           <li>
             <Link
-              to={'https://www.instagram.com/mpulseignite/'}
+              to={'https://www.youtube.com/@Mpulse-Ignite'}
               target="_blank">
               <AiOutlineYoutube className={styles.socialIcon} />
             </Link>
