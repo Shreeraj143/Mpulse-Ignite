@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { AiOutlineClose } from 'react-icons/ai';
-import { MdMenu } from 'react-icons/md';
-import styles from '../styles/components/Layout.module.css';
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { AiOutlineClose } from "react-icons/ai";
+import { MdMenu } from "react-icons/md";
+import styles from "../styles/components/Layout.module.css";
 
 const Navbar = () => {
   const location = useLocation();
@@ -11,8 +11,8 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`${open ? styles.show : ''}`}
-      style={{ background: location.pathname !== '/' && '#2b2141' }}
+      className={`${open ? styles.show : ""}`}
+      style={{ background: location.pathname !== "/" && "#333333" }}
     >
       <Link to="/">
         <img src="/ignite-logo.png" alt="ignite-logo" />

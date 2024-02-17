@@ -1,48 +1,48 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
-import axios from 'axios';
-import { Helmet } from 'react-helmet';
-import { toast } from 'react-toastify';
-import styles from '../styles/pages/Register.module.css';
+import axios from "axios";
+import { Helmet } from "react-helmet";
+import { toast } from "react-toastify";
+import styles from "../styles/pages/Register.module.css";
 
 const qrs = {
-  30: '/qrs/30rs.jpeg',
-  60: '/qrs/60rs.jpeg',
-  90: '/qrs/90rs.jpeg',
-  120: '/qrs/120rs.jpeg',
-  150: '/qrs/150rs.jpeg',
-  200: '/qrs/200rs.jpeg',
-  300: '/qrs/300rs.jpeg',
-  450: '/qrs/450rs.jpeg',
-  600: '/qrs/600rs.jpeg',
+  30: "/qrs/30rs.jpeg",
+  60: "/qrs/60rs.jpeg",
+  90: "/qrs/90rs.jpeg",
+  120: "/qrs/120rs.jpeg",
+  150: "/qrs/150rs.jpeg",
+  200: "/qrs/200rs.jpeg",
+  300: "/qrs/300rs.jpeg",
+  450: "/qrs/450rs.jpeg",
+  600: "/qrs/600rs.jpeg",
 };
 
 const Register = () => {
-  const years = ['1st', '2nd', '3rd', '4th'];
+  const years = ["1st", "2nd", "3rd", "4th"];
   const events = [
-    'Bug Bounty',
-    'Design-X',
-    'Hackathon',
-    'Mock Placement',
-    'Escape Room',
+    "Bug Bounty",
+    "Design-X",
+    "Hackathon",
+    "Mock Placement",
+    "Escape Room",
   ];
 
   const [data, setData] = useState({
-    first_name: '',
-    last_name: '',
-    email: '',
-    contact: '',
-    college_name: '',
-    college_department: '',
-    current_year: '1st',
-    event_name: 'Bug Bounty',
-    payment_id: '',
+    first_name: "",
+    last_name: "",
+    email: "",
+    contact: "",
+    college_name: "",
+    college_department: "",
+    current_year: "1st",
+    event_name: "Bug Bounty",
+    payment_id: "",
     team_members: [],
-    teammember1: '',
-    teammember2: '',
-    teammember3: '',
+    teammember1: "",
+    teammember2: "",
+    teammember3: "",
     is_team_event: false,
-    payment_screenshot: '',
+    payment_screenshot: "",
   });
 
   const [fees, setFees] = useState(0);
@@ -51,11 +51,11 @@ const Register = () => {
 
   useEffect(() => {
     if (
-      data.event_name === 'Bug Bounty' ||
-      data.event_name === 'Mock Placement'
+      data.event_name === "Bug Bounty" ||
+      data.event_name === "Mock Placement"
     ) {
       setFees(30);
-    } else if (data.event_name === 'Hackathon') {
+    } else if (data.event_name === "Hackathon") {
       let fee = 150;
       if (data.teammember1.length > 0) {
         fee += 150;
@@ -68,8 +68,8 @@ const Register = () => {
       }
       setFees(fee);
     } else if (
-      data.event_name === 'Design-X' ||
-      data.event_name === 'Escape Room'
+      data.event_name === "Design-X" ||
+      data.event_name === "Escape Room"
     ) {
       let fee = 30;
       if (data.teammember1.length > 0) {
@@ -94,35 +94,35 @@ const Register = () => {
     setData({
       ...data,
       event_name: _event,
-      teammember1: '',
-      teammember2: '',
-      teammember3: '',
+      teammember1: "",
+      teammember2: "",
+      teammember3: "",
     });
   };
 
   const notifyError = (message) => {
     toast.error(message, {
-      position: 'top-center',
+      position: "top-center",
       autoClose: 3000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
-      theme: 'colored',
+      theme: "colored",
     });
   };
 
   const notifySuccess = (message) => {
     toast.success(message, {
-      position: 'top-center',
+      position: "top-center",
       autoClose: 10000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
-      theme: 'colored',
+      theme: "colored",
     });
   };
 
@@ -140,72 +140,71 @@ const Register = () => {
       data.payment_id.length < 1 ||
       data.payment_screenshot.length < 1
     ) {
-      notifyError('Please fill all required fields');
+      notifyError("Please fill all required fields");
       setLoading(false);
     } else if (
-      data.event_name === 'Bug Bounty' ||
-      data.event_name === 'Mock Placement'
+      data.event_name === "Bug Bounty" ||
+      data.event_name === "Mock Placement"
     ) {
       const formData = new FormData();
 
       const team = `["${data.first_name} ${data.last_name}"]`;
 
-      formData.append('first_name', data.first_name);
-      formData.append('last_name', data.last_name);
-      formData.append('email', data.email);
-      formData.append('contact', data.contact);
-      formData.append('college_name', data.college_name);
-      formData.append('college_department', data.college_department);
-      formData.append('current_year', data.current_year);
-      formData.append('event_name', data.event_name);
-      formData.append('payment_id', data.payment_id);
-      formData.append('team_members', team);
-      formData.append('is_team_event', false);
-      formData.append('payment_screenshot', data.payment_screenshot);
+      formData.append("first_name", data.first_name);
+      formData.append("last_name", data.last_name);
+      formData.append("email", data.email);
+      formData.append("contact", data.contact);
+      formData.append("college_name", data.college_name);
+      formData.append("college_department", data.college_department);
+      formData.append("current_year", data.current_year);
+      formData.append("event_name", data.event_name);
+      formData.append("payment_id", data.payment_id);
+      formData.append("team_members", team);
+      formData.append("is_team_event", false);
+      formData.append("payment_screenshot", data.payment_screenshot);
 
       try {
-        console.log(
-          `${process.env.REACT_APP_FLASK_BACKEND}/api/auth/register`
-        );
+        console.log(`${process.env.REACT_APP_FLASK_BACKEND}/api/auth/register`);
         const response = await axios.post(
-          `${process.env.REACT_APP_FLASK_BACKEND}/api/auth/register`,
+          // `${process.env.REACT_APP_FLASK_BACKEND}/api/auth/register`,
+          // `https://mpulse-ignite-default-rtdb.firebaseio.com/`,
           formData,
           {
             headers: {
-              'Content-Type': 'multipart/form-data',
+              "Content-Type": "multipart/form-data",
             },
           }
         );
 
-        notifySuccess('Your registration has been successfully completed.');
+        notifySuccess("Your registration has been successfully completed.");
         setData({
-          first_name: '',
-          last_name: '',
-          email: '',
-          contact: '',
-          college_name: '',
-          college_department: '',
-          current_year: '1st',
-          event_name: 'Bug Bounty',
-          payment_id: '',
+          first_name: "",
+          last_name: "",
+          email: "",
+          contact: "",
+          college_name: "",
+          college_department: "",
+          current_year: "1st",
+          event_name: "Bug Bounty",
+          payment_id: "",
           team_members: [],
-          teammember1: '',
-          teammember2: '',
-          teammember3: '',
+          teammember1: "",
+          teammember2: "",
+          teammember3: "",
           is_team_event: false,
-          payment_screenshot: '',
+          payment_screenshot: "",
         });
       } catch (error) {
         notifyError(
-          'Error occured while submiting the form. Please try again.'
+          "Error occured while submiting the form. Please try again."
         );
         console.log(error);
       } finally {
         setLoading(false);
       }
     } else if (
-      data.event_name !== 'Bug Bounty' ||
-      data.event_name !== 'Mock Placement'
+      data.event_name !== "Bug Bounty" ||
+      data.event_name !== "Mock Placement"
     ) {
       const formData = new FormData();
 
@@ -221,51 +220,52 @@ const Register = () => {
         team.push(`"${data.teammember3}"`);
       }
 
-      formData.append('first_name', data.first_name);
-      formData.append('last_name', data.last_name);
-      formData.append('email', data.email);
-      formData.append('contact', data.contact);
-      formData.append('college_name', data.college_name);
-      formData.append('college_department', data.college_department);
-      formData.append('current_year', data.current_year);
-      formData.append('event_name', data.event_name);
-      formData.append('payment_id', data.payment_id);
-      formData.append('team_members', team);
-      formData.append('is_team_event', true);
-      formData.append('payment_screenshot', data.payment_screenshot);
+      formData.append("first_name", data.first_name);
+      formData.append("last_name", data.last_name);
+      formData.append("email", data.email);
+      formData.append("contact", data.contact);
+      formData.append("college_name", data.college_name);
+      formData.append("college_department", data.college_department);
+      formData.append("current_year", data.current_year);
+      formData.append("event_name", data.event_name);
+      formData.append("payment_id", data.payment_id);
+      formData.append("team_members", team);
+      formData.append("is_team_event", true);
+      formData.append("payment_screenshot", data.payment_screenshot);
 
       try {
         const response = await axios.post(
-          `${process.env.REACT_APP_FLASK_BACKEND}/api/auth/register`,
+          // `${process.env.REACT_APP_FLASK_BACKEND}/api/auth/register`,
+          `https://mpulse-ignite-default-rtdb.firebaseio.com/`,
           formData,
           {
             headers: {
-              'Content-Type': 'multipart/form-data',
+              "Content-Type": "multipart/form-data",
             },
           }
         );
-        notifySuccess('Your registration has been successfully completed.');
+        notifySuccess("Your registration has been successfully completed.");
 
         setData({
-          first_name: '',
-          last_name: '',
-          email: '',
-          contact: '',
-          college_name: '',
-          college_department: '',
-          current_year: '1st',
-          event_name: 'Bug Bounty',
-          payment_id: '',
+          first_name: "",
+          last_name: "",
+          email: "",
+          contact: "",
+          college_name: "",
+          college_department: "",
+          current_year: "1st",
+          event_name: "Bug Bounty",
+          payment_id: "",
           team_members: [],
-          teammember1: '',
-          teammember2: '',
-          teammember3: '',
+          teammember1: "",
+          teammember2: "",
+          teammember3: "",
           is_team_event: false,
-          payment_screenshot: '',
+          payment_screenshot: "",
         });
       } catch (error) {
         notifyError(
-          'Error occured while submiting the form. Please try again.'
+          "Error occured while submiting the form. Please try again."
         );
         console.log(error);
       } finally {
@@ -291,9 +291,7 @@ const Register = () => {
               className={styles.formcontrol}
               required
               value={data.first_name}
-              onChange={(e) =>
-                setData({ ...data, first_name: e.target.value })
-              }
+              onChange={(e) => setData({ ...data, first_name: e.target.value })}
             />
             <label htmlFor="firstname" className={styles.floatinglabel}>
               First name <span>*</span>
@@ -397,9 +395,9 @@ const Register = () => {
             </select>
           </div>
         </div>
-        {(data.event_name === 'Hackathon' ||
-          data.event_name === 'Escape Room' ||
-          data.event_name === 'Design-X') && (
+        {(data.event_name === "Hackathon" ||
+          data.event_name === "Escape Room" ||
+          data.event_name === "Design-X") && (
           <>
             <div className={styles.row1}>
               <div className={styles.floatinglabelgroup}>
@@ -431,7 +429,7 @@ const Register = () => {
                 </label>
               </div>
             </div>
-            {data.event_name !== 'Design-X' && (
+            {data.event_name !== "Design-X" && (
               <div className={styles.row1}>
                 <div className={styles.floatinglabelgroup}>
                   <input
@@ -442,9 +440,7 @@ const Register = () => {
                       setData({ ...data, teammember3: e.target.value })
                     }
                   />
-                  <label
-                    className={styles.floatinglabel}
-                    htmlFor="teammember3">
+                  <label className={styles.floatinglabel} htmlFor="teammember3">
                     Team member
                   </label>
                 </div>
@@ -460,9 +456,7 @@ const Register = () => {
               className={styles.formcontrol}
               required
               value={data.payment_id}
-              onChange={(e) =>
-                setData({ ...data, payment_id: e.target.value })
-              }
+              onChange={(e) => setData({ ...data, payment_id: e.target.value })}
             />
             <label className={styles.floatinglabel} htmlFor="paymentid">
               Payment ID <span>*</span>
@@ -487,7 +481,7 @@ const Register = () => {
         <div className={styles.qr}>
           <img src={qrs[fees]} alt={`${fees}-qr`} />
         </div>
-        <button>{loading ? 'Submitting...' : 'Submit'}</button>
+        <button>{loading ? "Submitting..." : "Submit"}</button>
       </form>
     </div>
   );

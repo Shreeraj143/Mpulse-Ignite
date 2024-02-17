@@ -1,6 +1,6 @@
-import { useCallback } from 'react';
-import Particles from 'react-particles';
-import { loadFull } from 'tsparticles';
+import { useCallback } from "react";
+import Particles from "react-particles";
+import { loadFull } from "tsparticles";
 
 export const ParticleBackground = () => {
   const particlesInit = useCallback(async (engine) => {
@@ -20,11 +20,11 @@ export const ParticleBackground = () => {
           events: {
             onClick: {
               enable: true,
-              mode: 'push',
+              mode: "push",
             },
             onHover: {
               enable: true,
-              mode: 'repulse',
+              mode: "repulse",
             },
             resize: true,
           },
@@ -40,10 +40,10 @@ export const ParticleBackground = () => {
         },
         particles: {
           color: {
-            value: '#0cd1eb',
+            value: "#FF8080",
           },
           links: {
-            color: '#0cd1eb',
+            color: "#FF8080",
             distance: 150,
             enable: true,
             opacity: 0.3,
@@ -53,10 +53,10 @@ export const ParticleBackground = () => {
             enable: true,
           },
           move: {
-            direction: 'none',
+            direction: "none",
             enable: true,
             outModes: {
-              default: 'bounce',
+              default: "bounce",
             },
             random: false,
             speed: 4,
@@ -73,7 +73,7 @@ export const ParticleBackground = () => {
             value: 0.5,
           },
           shape: {
-            type: 'circle',
+            type: "circle",
           },
           size: {
             value: { min: 2, max: 2 },

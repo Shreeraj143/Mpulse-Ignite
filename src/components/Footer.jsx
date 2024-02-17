@@ -1,9 +1,9 @@
-import { AiOutlineInstagram, AiOutlineYoutube } from 'react-icons/ai';
+import { AiOutlineInstagram, AiOutlineYoutube } from "react-icons/ai";
 
-import React from 'react';
-import { FaLinkedinIn } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
-import styles from '../styles/components/Layout.module.css';
+import React from "react";
+import { FaLinkedinIn } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import styles from "../styles/components/Layout.module.css";
 
 const Footer = () => {
   return (
@@ -35,28 +35,23 @@ const Footer = () => {
         <ul>
           <li>
             <Link
-              to={'https://www.instagram.com/mpulseignite/'}
-              target="_blank">
+              to={"https://www.instagram.com/mpulseignite/"}
+              target="_blank"
+            >
               <AiOutlineInstagram className={styles.socialIcon} />
             </Link>
           </li>
           <li>
             <Link
-              to={'https://www.instagram.com/mpulseignite/'}
-              target="_blank">
-              <FaLinkedinIn className={styles.socialIcon} />
-            </Link>
-          </li>
-          <li>
-            <Link
-              to={'https://www.instagram.com/mpulseignite/'}
-              target="_blank">
+              to={"https://youtube.com/@Mpulse-Ignite?si=IfoKbNFh1ZV3tsy4"}
+              target="_blank"
+            >
               <AiOutlineYoutube className={styles.socialIcon} />
             </Link>
           </li>
         </ul>
       </div>
-      <p>Powered by Mpulse Ignite 2023</p>
+      <p>Powered by Mpulse Ignite 2024</p>
     </footer>
   );
 };
