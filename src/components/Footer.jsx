@@ -41,23 +41,9 @@ const Footer = () => {
               <AiOutlineInstagram className={styles.socialIcon} />
             </Link>
           </li>
+
           <li>
-            <Link
-<<<<<<< HEAD
-              to={"https://youtube.com/@Mpulse-Ignite?si=IfoKbNFh1ZV3tsy4"}
-              target="_blank"
-            >
-=======
-              to={'https://www.instagram.com/mpulseignite/'}
-              target="_blank">
-              <FaLinkedinIn className={styles.socialIcon} />
-            </Link>
-          </li>
-          <li>
-            <Link
-              to={'https://www.youtube.com/@Mpulse-Ignite'}
-              target="_blank">
->>>>>>> 8c6eedd74e4f6b16340f032b80e253c900e56b3d
+            <Link to={"https://www.youtube.com/@Mpulse-Ignite"} target="_blank">
               <AiOutlineYoutube className={styles.socialIcon} />
             </Link>
           </li>
